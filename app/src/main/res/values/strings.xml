@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Day14_ShoppingApp</string>
+    <string name="user">user</string>
+    <string name="cart">shopping cart\n\n</string>
+    <string name="notification">notifications\n</string>
+    <string name="m">M</string>
+    <string name="l">L</string>
+    <string name="xl">XL</string>
+</resources>

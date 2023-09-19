@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:src="@drawable/logo" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_product_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@id/cardView_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_app_bar_layout">
+
+
+        <ImageView
+            android:id="@+id/bg_blob"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/blob2"
+            app:tint="@color/dress_theme_color" />
+
+        <ImageView
+            android:id="@+id/product_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/dress1" />
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:cardBackgroundColor="@color/dress_theme_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_product_image">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:fontFamily="sans-serif-black"
+            android:text="3.8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/rating_describer"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/cardView_rating"
+        app:layout_constraintTop_toBottomOf="@+id/fl_product_image"
+        android:text="Good" />
+
+
+    <TextView
+        android:id="@+id/dress_name"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:fontFamily="sans-serif-black"
+        android:paddingVertical="@dimen/_8sdp"
+        android:text="Patani Konsi Dress"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_describer" />
+
+    <TextView
+        android:id="@+id/dress_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:text="Whether you wear glasses out of necessity or for style, it can be challenging to find the perfect pair that matches your features and represents your personality. light glasses."
+        android:textColor="#888686"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toStartOf="@id/price_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dress_name" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/price_card"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginHorizontal="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dress_description"
+        app:layout_constraintTop_toBottomOf="@+id/fl_product_image"
+        app:layout_constraintBottom_toTopOf="@id/ll_radio_buttons">
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="$120"
+            android:textColor="@color/dress_theme_color"
+            android:textSize="@dimen/_18ssp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/ll_radio_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/_20sdp"
+        android:gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dress_description"
+        app:layout_constraintBottom_toTopOf="@id/buy_btn">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Sizes"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_3sdp"
+                app:dividerColor="@color/dress_theme_color" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="10dp">
+
+                <TextView
+                    android:id="@+id/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_selected"
+                    android:gravity="center"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:text="M" />
+
+                <TextView
+                    android:id="@+id/large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_unselected"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="L"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/extra_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_unselected"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="XL"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Colors"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_3sdp"
+                app:dividerColor="@color/dress_theme_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_color1"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    app:cardElevation="0dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/color_1"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginVertical="@dimen/_6sdp"
+                        android:background="@drawable/circle_shape"
+                        android:backgroundTint="#FFC107" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_color2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/color_2"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginVertical="@dimen/_6sdp"
+                        android:background="@drawable/circle_shape"
+                        android:backgroundTint="#A9A9A9" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_color3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginVertical="5dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/_5sdp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/color_3"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginVertical="@dimen/_6sdp"
+                        android:background="@drawable/circle_shape"
+                        android:backgroundTint="#000000" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Quantity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_3sdp"
+                app:dividerColor="@color/dress_theme_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/minus"
+                    android:background="@color/white"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp">
+
+                   <TextView
+                       android:layout_gravity="center"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/_3sdp"
+                       android:fontFamily="sans-serif-black"
+                       android:text="1"
+                       android:textColor="@color/black"
+                       android:textSize="12sp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageButton
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add"
+                    android:background="@color/white"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buy_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:backgroundTint="@color/dress_theme_color"
+        android:elevation="10dp"
+        android:text="Add To Bag  👜"
+        app:cornerRadius="0dp"
+        android:textSize="@dimen/_10ssp"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/wishlist_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_radio_buttons" />
+
+    <Button
+        android:id="@+id/wishlist_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:backgroundTint="@color/black"
+        android:stateListAnimator="@null"
+        android:textSize="@dimen/_10ssp"
+        android:elevation="10dp"
+        android:text="Wishlist ❤"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buy_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
